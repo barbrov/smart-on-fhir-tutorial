@@ -22,17 +22,7 @@
                     }
                   });
 
-       
-         var app = smart.patient.api.fetchAll({
-              type: 'Appointment',
-              query: {
-                  id: {
-                      $or: ['4817517', '4817572']
-                  }
-              }
-          );
-
-        $.when(pt, obv, app).fail(onError);
+        $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
